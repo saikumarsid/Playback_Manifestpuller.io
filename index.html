@@ -1744,7 +1744,7 @@ function checkSharedSession(){
     if(data.cols) document.getElementById('pb-cols').value=data.cols;
     if(data.tileSize) document.getElementById('pb-tile-size').value=data.tileSize;
     if(data.entries&&data.entries.length){
-      const lines=data.entries.map(e=>`$${e.channel}\t$${e.eventId}`).join('\n');
+      const lines=data.entries.map(e=>`${e.channel}\t${e.eventId}`).join('\n');
       document.getElementById('pb-input').value=lines;
       showToast('🔗 Shared session loaded! Generating URLs…', 'info');
       setTimeout(()=>{ generateURLs(); setTimeout(()=>startPlayback(),800); },600);
